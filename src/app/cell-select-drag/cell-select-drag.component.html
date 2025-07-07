@@ -1,0 +1,25 @@
+<h2>Multi Selection (Shift + Ctrl Click) with Drag</h2>
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Day \ Location</th>
+      <th *ngFor="let loc of locations" scope="col">{{ loc }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let day of days">
+      <th scope="row">{{ day }}</th>
+      <td
+        *ngFor="let loc of locations"
+        cellSelectDrag
+        [day]="day"
+        [location]="loc"
+        (cellEvent)="handleCellEvent($event)"
+        [class.selected]="isSelected(day, loc)"
+      >
+        &nbsp;
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p>Selected Cells: {{ selectedCells.length }}</p>

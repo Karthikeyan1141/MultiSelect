@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CellSelectComponent } from "./cell-selection/cell-select.component";
+import { CellSelectDragComponent } from "./cell-select-drag/cell-select-drag.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
+  imports: [CellSelectComponent, CellSelectDragComponent]
 })
 export class App {
   protected title = 'poc-multi-selection';

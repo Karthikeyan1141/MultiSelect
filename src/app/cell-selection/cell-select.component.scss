@@ -1,0 +1,27 @@
+table {
+    border-collapse: collapse;
+    user-select: none;
+    width: 100%;
+    max-width: 100%;
+}
+
+th,
+td {
+    border: 1px solid #aaa;
+    padding: 6px 10px;
+    text-align: center;
+    cursor: pointer;
+    min-width: 30px;
+    min-height: 28px;
+}
+
+th {
+    background-color: #f0f0f0;
+    font-weight: 600;
+    user-select: none;
+}
+
+td.selected {
+    background-color: #0078d4;
+    color: white;
+}

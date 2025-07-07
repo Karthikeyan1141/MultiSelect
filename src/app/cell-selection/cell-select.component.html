@@ -1,0 +1,27 @@
+<h2>Multi Cell Selection (Shift + Ctrl) Example</h2>
+<table>
+  <thead>
+    <tr>
+      <th scope="row">Day \ Location</th>
+      <th *ngFor="let loc of locations" scope="col">{{ loc }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let day of days">
+      <th scope="row">{{ day }}</th>
+      <td
+        *ngFor="let loc of locations"
+        cellMultiSelect
+        [day]="day"
+        [location]="loc"
+        (cellClick)="onCellClick($event)"
+        [class.selected]="isSelected(day, loc)"
+      >
+        &nbsp;
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngFor="let selectedCell of selectedCells">{{ selectedCell.day }} - {{ selectedCell.location }}</div>
+<p>Selected Cells Count: {{ selectedCells.length }}</p>
